@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plus One</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="./JS/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="./JS/app.js"></script>-->
+    <script type="text/javascript" src="https://use.fontawesome.com/b615b4dd8b.js"></script>
+    <script type="text/javascript" src="./JS/particleground.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    <!--Div for background particles-->
+    <div id="particles"></div>
+    
+    <div id="outer-content">
+        <!--Navigation sidebar-->
+        <div class="sidebar" id="side-nav">
+            <nav id="nav-home" class="goto goto-home">
+                Home
+            </nav>
+            <nav id="nav-app" class ="goto goto-app">
+                Application
+            </nav>
+            <nav id="nav-help" class="goto goto-help">
+                Help
+            </nav>
+            <nav id="nav-settings" class="goto goto-settings">
+                Settings
+            </nav>
+            <nav id="nav-author" class="goto goto-author">
+                About the Author
+            </nav>
+            <nav id="nav-exit" class="goto goto-exit">
+                Exit
+            </nav>
+        </div>
+        
+        <!--Help sidebar-->
+        <div class="sidebar" id="side-help">
+            <h1>Help</h1>
+            <p>
+                To get started, click the "I'm ready" button on the home page. 
+                Then fill out the form with your name, and the type and amount of 
+                questions you want.
+            </p>
+            <p>
+                At any time you can go to a different part of the app by clicking the
+                medu button in the header. You won't lose your progress unless you 
+                begin another game by filling in the form again.
+            </p>
+            <ol>
+                <li>
+                    <strong>Addition</strong>
+                    <br/>
+                    <p>
+                        Addition is calculating the total of two different numbers.
+                        Addiding one number to another gives you a result that is the
+                        sum of both numbers.
+                    </p>
+                </li>
+                <li>
+                    <strong>Subtraction</strong>
+                    <br/>
+                    <p>
+                        Subtraction is finding the difference between two numbers.
+                    </p> 
+                </li>
+                <li>
+                    <strong>Multiplication</strong>
+                    <br/>
+                    <p>
+                        Mulitiplication is just repeated addition. It is finding the
+                        result of adding the number to itsself an amount of times.
+                    </p>
+                    </li>
+                <li>
+                    <strong>Division</strong>
+                    <br/>
+                    <p>
+                        Division is just repeated subtraction. It is finding how 
+                        many times you can take one number away from another number 
+                        before there is nothing left.
+                    </p>
+                </li>
+            </ol>
+        </div>
+        
+        <!--All content that isnt the sidebar-->
+        <div class="not-sidebar">
+            <header>
+                <span id="menu-button" class="icon-button goto goto-menu">
+                    <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+                </span>
+                <span id="logo-container" class="goto goto-home">
+                    <h1 id="logo"> PLUS ONE </h1>
+                </span>
+                <span id="help-button" class="icon-button goto goto-help">
+                    <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+                </span>
+            </header>
+            
+            <main>
+                <!--Home page-->
+                <div class="main-content-box" id="home">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="inner-content">
+                        <h1>Welcome to Plus One!</h1>
+                        <br/>
+                        <p class="center">
+                            Plus One is an interactive online maths trainer, which 
+                            allows you to practice addition, subtraction, 
+                            multiplication and division.
+                            <br/>
+                            <br/>
+                            When you're ready, you can pick what type of questions 
+                            you want to practice, and how many. 
+                            <br/>
+                            Addition and subtraction questions will range 1-100, and 
+                            multiplication and division questions will range from 1-12.
+                            <br/>
+                            Make sure to be quick, because speedy answers will give 
+                            you extra points!
+                            <br/>
+                            <br/>
+                            Click the button below to get started!
+                        </p>
+                        <br/>
+                        <button id="ready-button" class="goto goto-app">I'm Ready!</button>
+                    </div>
+                </div>
+                
+                <!--Application page-->
+                <div class="main-content-box" id="app">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="inner-content">
+                        <div class="app-state" id="starting-form">
+                            <h2>Just a few things before we get started...</h2>
+                            <form id="details" class="center-vertical">
+                                <h4>Name (or nickname):</h4>
+                                <input type="text"
+                                       name="name" 
+                                       placeholder="Jay Smith"
+                                       maxlength="25"
+                                       required/>
+                                <br>
+                                <h4>Question type:</h4>
+                                <div class="radio-container">
+                                    <input type="radio" 
+                                           name="question-type" 
+                                           value="addition"
+                                           id="addition-button"
+                                           required/>
+                                    <label for="addition-button">&plus;</label>
+                                    
+                                    <input type="radio" 
+                                           name="question-type" 
+                                           value="subtraction"
+                                           id="subtraction-button"/>
+                                    <label for="subtraction-button">&minus;</label>
+                                    
+                                    <input type="radio" 
+                                           name="question-type" 
+                                           value="multiplication"
+                                           id="multiplication-button"/>
+                                    <label for="multiplication-button">&times;</label>
+                                    
+                                    <input type="radio" 
+                                           name="question-type" 
+                                           value="division"
+                                           id="division-button"/>
+                                    <label for="division-button">&divide;</label>
+                                    
+                                    <input type="radio" 
+                                           name="question-type" 
+                                           value="rand"
+                                           id="random-button"/>
+                                    <label for="random-button">
+                                        <i class="fa fa-random"></i>
+                                    </label>
+                                    <input type="radio" 
+                                           name="question-type" 
+                                           value="spacer"
+                                           id="question-type-spacer"
+                                           disabled="true"/>
+                                </div>
+                                <br>
+                                <h4>And how many questions?</h4>
+                                <div class="range-container center-vertical">
+                                    <input class="question-val" 
+                                           type="range" 
+                                           name="question-amount" 
+                                           value="25" 
+                                           min="10" 
+                                           max="100"/>
+                                    <input class="question-val" 
+                                           type="number" 
+                                           name="question-amount" 
+                                           value="25" 
+                                           min="10" 
+                                           max="100"/>
+                                    <!--<p class="question-val">?</p>-->
+                                </div>
+                                <br>
+                                <button type="submit" 
+                                        id="submit-details" 
+                                        class="goto goto-game">
+                                    Let's Go!
+                                </button>
+                            </form>
+                        </div>
+                        <div class="app-state" id="game" style="display: none;">
+                            <div id="info-bar">
+                                <h2>
+                                    <span id="progress">?</span>
+                                    /
+                                    <span id="question-amount">?</span>
+                                </h2>
+                                <h2>
+                                    Score: 
+                                    <span id="score">0</span>
+                                </h2>
+                                <h2>
+                                    &#128293;
+                                    <span id="streak">0</span>
+                                </h2>
+                            </div>
+                            <!--<div class="flex-control"></div>-->
+                            <div class="question">
+                                <span class="question-part" id="first-number">X</span>
+                                <span class="question-part" id="operation">~</span>
+                                <span class="question-part" id="second-number">Y</span>
+                            </div>
+                            <form id="answer" autocomplete="off">
+                                <input type="number" 
+                                       name="answer" 
+                                       placeholder="Answer"
+                                       autocomplete="off"
+                                       required/>
+                                <button type="submit">Submit</button>
+                            </form>
+                            <div class="flex-control"></div>
+                        </div>
+                        <div class="app-state" id="finished"> 
+                            <h1>
+                                <span class="encouragement">Nice,</span>
+                                <span class="name"></span>
+                                !
+                            </h1>
+                            <h2>
+                                You scored <span id="points">000</span> points, 
+                                and got <span id="correct">0</span> out of 
+                                <span id="total">0</span> correct!
+                            </h2>
+                            <h2>
+                                That's <span id="percentage"></span>% correct!
+                            </h2>
+                            <br/>
+                            <button id="try-again">Try Again?</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Settings page-->
+                <div class="main-content-box" id="settings">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="inner-content">
+                        <h1>Settings</h1>
+                        <br>
+                        <div class="settings-item" id="set-strobe">
+                            <p class="settings-item-desc">
+                                Strobe Mode
+                            </p>
+                            <input type="checkbox" id="strobe"/>
+                        </div>
+                        <div class="settings-item" id="set-dark">
+                            <p class="settings-item-desc">
+                                Dark mode (warning - eyesore)
+                            </p>
+                            <input type="checkbox" id="dark"/>
+                        </div>
+                        <!--<div class="settings-item">-->
+                        <!--    <p class="settings-item-desc">-->
+                        <!--        Setting description-->
+                        <!--    </p>-->
+                        <!--    <input type="checkbox"/>-->
+                        <!--</div>-->
+                        <!--<div class="settings-item">-->
+                        <!--    <p class="settings-item-desc">-->
+                        <!--        Setting description-->
+                        <!--    </p>-->
+                        <!--    <input type="checkbox"/>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                
+                <!--About the author page-->
+                <div class="main-content-box" id="author">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="inner-content">
+                        <h1>About the Author</h1>
+                        <p class="center">
+                            Hi! My name is Dexter Konijn, I'm 15 years old and in 
+                            year 10 at St Lukes Grammar School. 
+                            <br/>
+                            I built this website for a school assessment task, as a 
+                            way of letting young children practice maths.
+                            <br/>
+                            I enjoy programming and web design so making the 
+                            web application was a fun challenge.
+                        </p>
+                    </div>
+                </div>
+                
+                <!--Exit page-->
+                <div class="main-content-box" id="exit">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="inner-content center-vertical">
+                        <h1>Thanks for playing!</h1>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+<!--Loads last: 
+    workaround to $('document').ready(); 
+    avoids limiting variables to the ready() scope.
+    Not actually necesarry lol i just did everything wrong-->
+<script type="text/javascript" src="./JS/program.js"></script>
+</html>

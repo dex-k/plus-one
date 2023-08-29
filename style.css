@@ -1,0 +1,464 @@
+/* Colors http://materializecss.com/color.html
+#fce4ec pink lighten-5
+#f8bbd0 pink lighten-4
+#f48fb1 pink lighten-3
+#f06292 pink lighten-2
+#ec407a pink lighten-1
+#e91e63 pink normal
+
+#fffde7 yellow lighten-5
+#fff9c4 yellow lighten-4
+#fff59d yellow lighten-3
+#fff176 yellow lighten-2
+#ffee58 yellow lighten-1
+#ffeb3b yellow normal
+
+#e0f7fa cyan lighten-5
+#b2ebf2 cyan lighten-4
+#80deea cyan lighten-3
+#4dd0e1 cyan lighten-2
+#26c6da cyan lighten-1
+#00bcd4 cyan normal
+
+#f1f8e9 light-green lighten-5
+#dcedc8 light-green lighten-4
+#c5e1a5 light-green lighten-3
+#aed581 light-green lighten-2
+#9ccc65 light-green lighten-1
+#8bc34a light-green
+*/
+
+/* Testing */
+* {
+    /*border: 1px solid red;*/
+}
+
+/**********GENERAL RULESETS**********/
+html {
+    height:100%; 
+    width: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #424242;
+    margin: 0;
+    background-color:#80deea;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+p {
+    line-height: 1.5;
+    max-width: 600px;
+    /*margin: auto;*/
+}
+
+svg {
+    margin: 0;
+    padding: 0;
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+button {
+    margin: 10px auto;
+    padding: 1em;
+    font-size: 1em;
+    border: 0.5px solid #aaa;
+    border-radius: 0;
+}
+
+button:hover {
+    border-color: #777;
+}
+/**********GENERAL CLASSES**********/
+.center {
+    margin: auto;
+}
+
+.goto {
+    cursor: pointer;
+}
+
+.sidebar {
+    display: none;
+    width: 20vw;
+    background-color: #424242;
+    /*border-right: 0.2em solid #bdbdbd;*/
+    height: 100%;
+    color: #eee;
+}
+
+/******FLEXBOX SIMPLICITY*****/
+
+.center-vertical {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+/**********SPECIFICS**********/
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#outer-content {
+    /*all: default;*/
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+/**********SIDE MENUS***********/
+#side-nav {
+    order: -99;
+    max-width: 250px;
+}
+/*.side-nav-img {*/
+/*    height: calc(20vw - 2.5em);*/
+/*    width: calc(20vw - 2.5em);*/
+/*    max-width: calc(250px - 2.5em);*/
+/*    max-height: calc(250px - 2.5em);*/
+/*    margin: 1.25em;*/
+/*    background-color: #212121;*/
+    /*background-color: #FAFAFA;*/
+/*    border-radius: 100%;*/
+    
+/*    display: flex;*/
+    /*display: none;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+    
+/*}*/
+
+/*.side-nav-svg {*/
+/*    width: 80%;*/
+/*    height: 80%;*/
+    
+/*}*/
+
+nav {
+    color: #eee;
+    text-align: right;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.75em;
+    cursor: pointer;
+}
+
+nav:hover {
+    border-right: .15em solid #f48fb1;
+    /*font-weight: bold;*/
+}
+
+#side-help {
+    order: 99;
+    width: 30vw;
+    max-width: 350px;
+    overflow-x: scroll;
+    /*word-wrap: break-word;*/
+    padding: 0 1em;
+}
+
+.not-sidebar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    
+    /*background: linear-gradient(270deg, #80deea, #9bf7e2, #81d4fa);*/
+    /*background-size: 600% 600%;*/
+    /*animation: gradient-bg 15s ease infinite;*/
+
+    background-color: #F4F4F4;
+    box-shadow: 0px 0px 25px 0px rgba(132,132,132,1);
+}
+.icon-button {
+    padding: 0.4em;
+    cursor: pointer;
+}
+#logo-container {
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+}
+#logo {
+    color: #f48fb1; 
+    font-size: 2.5em;
+    text-shadow: 1px 1px 0px #fff59d;
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content-box {
+    background-color: #F4F4F4;
+    width: 80%;
+    height: 80%;
+    max-height: 600px;
+    max-width: 900px;
+    margin: 1em;
+    padding: 0;
+    
+}
+.progress-bar-container {
+    width: 100%;
+    height: 0.5em;
+    max-height: 10px;
+    background-color: #c5e1a5;
+    overflow: hidden;
+}
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #f48fb1;
+}
+
+.inner-content {
+    width: calc(100%-20px);
+    height: calc(100% - 0.5em - 20px);
+    padding: 10px;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/************* CONTENT BOXES **************/
+.main-content-box {
+    /*display: none;*/
+}
+/********HOME********/
+#home {
+    display: auto;
+}
+/*#ready-button {*/
+/*    margin: 0 auto;*/
+/*    padding: 0.75em;*/
+/*    font-size: 1em;*/
+/*}*/
+
+/********APP********/
+#app {
+    display: none;
+}
+.app-state {
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+/****FORM****/
+#starting-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#starting-form:first-child {
+    flex-grow: 0;
+}
+#details {
+    flex-grow: 1;
+    width: 100%;
+}
+#details > * {
+    margin: 0.75em 0;
+}
+input[type="text"], input[name="answer"] {
+    padding: 1em;
+    font-size: 1em;
+}
+/*RADIO*/
+.radio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.radio-container input[type="radio"] {
+    margin: 0 1em; 
+    padding: 0;
+    visibility: hidden;
+}
+label {
+    font-size: 3em;
+    padding: 0;
+    line-height: 1;
+    font-weight: 300;
+    
+    color: #848484;
+    
+    /*center vertically*/
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around
+}
+label > .fa {
+    color: #848484;
+    font-size: 0.67em;
+    
+}
+i::before {
+    align-self: center;
+}
+#question-type-spacer {
+    visibility: hidden;
+}
+.radio-container input[type="radio"]:hover + label,
+.radio-container input[type="radio"]:hover + label > .fa{
+    color: #616161;
+}
+.radio-container input[type="radio"]:checked + label, 
+.radio-container input[type="radio"]:checked + label > .fa{
+    color: #424242;
+    text-shadow: 2px 2px 0px #fff59d;
+}
+.range-container {
+    width: 40%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+input[type="range"] {
+    width: 100%;
+}
+.question-val:last-child {
+    margin-left: 1em;
+    width: 3em;
+    padding: 0.25em;
+}
+/****GAME****/
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#info-bar {
+    width: calc(100% - 1em);
+    
+    padding: 0 .5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#info-bar h2 {
+    line-height: 0;
+}
+.qa {
+    height: 100%;
+}
+.question {
+    white-space: nowrap;
+    max-height: 1em;
+}
+.question-part {
+    font-weight: bold;
+    font-size: 3em;
+    margin: 1em .25em;
+}
+#answer button {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.red-pulse {
+    animation: red-pulse 0.25s infinite ease-out;
+}
+.green-pulse {
+    animation: green-pulse 0.25s infinite ease-out
+}
+
+@keyframes red-pulse {
+  from {
+    box-shadow:  0 0 0 0 rgba(255,255,255,1),
+                 0 0 0 0 rgba(239, 154, 154, 1);
+  }
+  to {
+    box-shadow:  0 0 0 0.5em rgba(255,255,255,1),
+                 0 0 0 2em rgba(239, 154, 154, 0);
+  }
+}
+@keyframes green-pulse {
+  from {
+    box-shadow:  0 0 0 0 rgba(255,255,255,1),
+                 0 0 0 0 rgba(197, 225, 165, 1);
+  }
+  to {
+    box-shadow:  0 0 0 0.5em rgba(255,255,255,1),
+                 0 0 0 2em rgba(197, 225, 165, 0);
+  }
+}
+/***FINISHED***/
+#finished {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#try-again {
+    align-self: flex-end;
+}
+/********SETTINGS********/
+#settings {
+    display: none;
+}
+.settings-item {
+    width: 100%;
+    max-width: 600px;
+    margin: 1em auto;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*******AUTHOR********/
+#author {
+    display: none;
+}
+
+/*******EXIT*******/
+#exit {
+    display: none;
+}
+#exit > .inner-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/**********HELP TAB**********/
